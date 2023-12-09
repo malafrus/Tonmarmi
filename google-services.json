@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "600118497036",
+    "project_id": "tonmarmi",
+    "storage_bucket": "tonmarmi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600118497036:android:d2fd8c13dfa7714cb64329",
+        "android_client_info": {
+          "package_name": "fr.upjv.tonmarmi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600118497036-boaq8186giq6ufgkh18r7p2lppro8gii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.upjv.tonmarmi",
+            "certificate_hash": "4043a0666913a49bad9279759fc52bea0f449f79"
+          }
+        },
+        {
+          "client_id": "600118497036-9dn4v4u4rj7fvs792nf93d0nso7mfn5n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjJ1d_hlvQ2sY6SzKf1heM10JKi4NYcUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600118497036-9dn4v4u4rj7fvs792nf93d0nso7mfn5n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

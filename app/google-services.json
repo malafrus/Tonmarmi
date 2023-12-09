@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "600118497036",
+    "project_id": "tonmarmi",
+    "storage_bucket": "tonmarmi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600118497036:android:d2fd8c13dfa7714cb64329",
+        "android_client_info": {
+          "package_name": "fr.upjv.tonmarmi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjJ1d_hlvQ2sY6SzKf1heM10JKi4NYcUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

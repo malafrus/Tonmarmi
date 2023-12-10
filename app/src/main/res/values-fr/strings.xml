@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="home_page">Accueil</string>
+    <string name="txt_log">Pas connecté</string>
+    <string name="btn_signIn">Cennexion avec Google</string>
+    <string name="btn_signOut">Déconnexion</string>
 </resources>

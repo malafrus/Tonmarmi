@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name" translatable="false">Tonmarmi</string>
-    <string name="WebClientId" translatable="false">600118497036-boaq8186giq6ufgkh18r7p2lppro8gii.apps.googleusercontent.com</string>
+    <string name="WebClientId" translatable="false">4043a0666913a49bad9279759fc52bea0f449f79</string>
 
     <string name="home_page">Home</string>
     <string name="Auth" translatable="false">AUTH</string>
+    <string name="txt_log">Not logged in</string>
+    <string name="btn_signIn">Sign-in via Google</string>
+    <string name="btn_signOut">Sign out</string>
     <string name="API" translatable="false">API</string>
 
     <string-array name="mainteners" translatable="false">

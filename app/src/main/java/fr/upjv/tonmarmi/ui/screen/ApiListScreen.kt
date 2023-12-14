@@ -41,66 +41,70 @@ fun ApiScreen(
 {
     val context = LocalContext.current
     val viewModel: RecipesViewModel = viewModel()
-    val recipes = viewModel.recipe.collectAsState(emptyList()).value
+    val recipes = viewModel.recipes.collectAsState(emptyList()).value
 
-    Column (
+    LazyColumn (
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ){
-        Text(text = stringResource(id = R.string.API))
-        Box(modifier = Modifier.fillMaxWidth()){
-            LazyColumn (
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .size(height = 500.dp, width = 0.dp),
-                contentPadding = PaddingValues(10.dp)
-            ){
-                items(recipes.size){ recipeContent ->
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .clickable {
-
-                                Toast.makeText(context, "${recipes[recipeContent].id}", Toast.LENGTH_SHORT).show()
-                                onItemListClick(recipes[recipeContent].id)
-                            }
-                    ){
-                        Spacer(
+        item{
+            Text(text = stringResource(id = R.string.API))
+        }
+        item {
+            Box(modifier = Modifier.fillMaxWidth()){
+                LazyColumn (
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .size(height = 500.dp, width = 0.dp),
+                    contentPadding = PaddingValues(10.dp)
+                ){
+                    items(recipes.size){ recipeContent ->
+                        Box(
                             modifier = Modifier
-                                .height(1.dp)
-                                .background(Color.White)
                                 .fillMaxSize()
-                        )
-                        Column {
-                            Text(text = "${recipes[recipeContent].id} - ${recipes[recipeContent].name}")
-                            /*for(i in 0 until recipes[recipeContent].ingredients.size){
-                                Text(text = "${recipes[recipeContent].ingredients[i]} : ${recipes[recipeContent].measures[i]}")
-                            }*/
+                                .clickable {
+
+                                    Toast.makeText(context, "${recipes[recipeContent].id}", Toast.LENGTH_SHORT).show()
+                                    onItemListClick(recipes[recipeContent].id)
+                                }
+                        ){
                             Spacer(
                                 modifier = Modifier
                                     .height(1.dp)
                                     .background(Color.White)
                                     .fillMaxSize()
                             )
+                            Column {
+                                Text(text = "${recipes[recipeContent].id} - ${recipes[recipeContent].name}")
+                                Spacer(
+                                    modifier = Modifier
+                                        .height(1.dp)
+                                        .background(Color.White)
+                                        .fillMaxSize()
+                                )
 
+                            }
                         }
-                    }
 
+                    }
                 }
             }
         }
-        Row {
-            Button(
-                content = { Text(text = "Add") },
-                onClick = {
-                    viewModel.insertRandomRecipe()
-                })
-            Button(
-                content = { Text(text = "Delete")},
-                onClick = {
-                    viewModel.deleteAllRecipe()
-                })
+        item {
+            Row {
+                Button(
+                    content = { Text(text = "Add") },
+                    onClick = {
+                        viewModel.insertRandomRecipe()
+                    })
+                Button(
+                    content = { Text(text = "Delete")},
+                    onClick = {
+                        viewModel.deleteAllRecipe()
+                    })
+            }
         }
+
     }
 }
 

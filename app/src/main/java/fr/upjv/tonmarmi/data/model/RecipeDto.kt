@@ -51,7 +51,7 @@ data class RecipeDto(
     val ingredient3 : String,
 
     @Expose
-    @SerializedName("strIngredient4")
+
     val ingredient4 : String,
 
     @Expose
@@ -241,7 +241,7 @@ fun RecipeDto.toRoom(): RecipeEntity {
                 ingredient18,
                 ingredient19,
                 ingredient20,
-                ).filter { it != "" },
+                ).filter { it != "" && it != "null"},
             measures = mutableListOf(
                 measure1,
                 measure2,
@@ -262,7 +262,7 @@ fun RecipeDto.toRoom(): RecipeEntity {
                 measure18,
                 measure19,
                 measure20,
-            ).filter { it != "" },
+            ).filter { it != "" && it != "null" },
         time = Timestamp(System.currentTimeMillis())
         )
 }

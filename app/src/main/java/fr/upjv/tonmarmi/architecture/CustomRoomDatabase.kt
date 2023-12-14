@@ -10,7 +10,7 @@ import fr.upjv.tonmarmi.data.model.RecipeEntity
     entities = [
         RecipeEntity::class,
     ],
-    version = 10,
+    version = 1,
     exportSchema = false
 )
 @TypeConverters(Converter::class)

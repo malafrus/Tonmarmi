@@ -5,14 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
-import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -23,14 +18,13 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
-import com.google.firebase.FirebaseApp
 import fr.upjv.tonmarmi.R
-import fr.upjv.tonmarmi.ui.theme.TonmarmiTheme
 import fr.upjv.tonmarmi.ui.navigation.HomeNavHost
+import fr.upjv.tonmarmi.ui.theme.TonmarmiTheme
 
 var id = ""
+
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,16 +37,18 @@ class MainActivity : ComponentActivity() {
 
                 Scaffold(
                     modifier = Modifier,
-                    topBar ={
+                    topBar = {
                         TopAppBar(
                             colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = MaterialTheme.colorScheme.primary),
-                            title = { Text(
-                                text = stringResource(id = R.string.app_name),
-                            ) },
+                            title = {
+                                Text(
+                                    text = stringResource(id = R.string.app_name),
+                                )
+                            },
                             navigationIcon = {
                                 IconButton(onClick = {
                                     //navController.popBackStack()
-                                    if(!navController.popBackStack()){
+                                    if (!navController.popBackStack()) {
                                         finish()
                                     }
 
@@ -66,7 +62,7 @@ class MainActivity : ComponentActivity() {
                         )
 
                     }
-                ){
+                ) {
                     Box(
                         modifier = Modifier
                             .fillMaxSize()

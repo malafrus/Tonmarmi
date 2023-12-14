@@ -10,24 +10,24 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
-class RecipesViewModel: ViewModel() {
+class RecipesViewModel : ViewModel() {
 
     private val recipeRepository: RecipeRepository by lazy { RecipeRepository() }
-    private val recipes: Flow<List<RecipeItemUi>>
-        get() = recipeRepository.selectAll().map {
-            list -> list.toUi()
+    private val _recipes: Flow<List<RecipeItemUi>>
+        get() = recipeRepository.selectAll().map { list ->
+            list.toUi()
         }
 
-    val recipe = recipes
+    val recipes get() = _recipes
 
-    fun insertRandomRecipe(){
-        viewModelScope.launch(Dispatchers.IO){
+    fun insertRandomRecipe() {
+        viewModelScope.launch(Dispatchers.IO) {
             recipeRepository.fetchRandomData()
         }
     }
 
-    fun deleteAllRecipe(){
-        viewModelScope.launch(Dispatchers.IO){
+    fun deleteAllRecipe() {
+        viewModelScope.launch(Dispatchers.IO) {
             recipeRepository.deleteAll()
         }
     }
